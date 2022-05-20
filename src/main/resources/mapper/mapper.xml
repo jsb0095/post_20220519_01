@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="Post">
+    <insert id="save" parameterType="Post">
+        insert into Post_table(postId,postPassword,postName,postAge,postMobile)
+        values (#{postId},#{postPassword},#{postName},#{postAge},#{postMobile})
+    </insert>
+<select id="loginCheck"  resultType="Post">
+    select postId,postPassword from Post_table where postId=#{postId} and postPassword=#{postPassword}
+</select>
+    <select id="findAll" resultType="Post">
+        select * from Post_table
+    </select>
+    <select id="findById" resultType="Post" parameterType="Long">
+        select * from Post_table where id=#{id}
+    </select>
+    <delete id="dropId"  parameterType="Long" >
+        delete from Post_table where id=#{id}
+    </delete>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
