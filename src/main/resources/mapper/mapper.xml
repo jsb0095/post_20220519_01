@@ -9,7 +9,7 @@
         values (#{postId},#{postPassword},#{postName},#{postAge},#{postMobile})
     </insert>
 <select id="loginCheck"  resultType="Post">
-    select postId,postPassword from Post_table where postId=#{postId} and postPassword=#{postPassword}
+    select *from Post_table where postId=#{postId} and postPassword=#{postPassword}
 </select>
     <select id="findAll" resultType="Post">
         select * from Post_table
@@ -20,6 +20,9 @@
     <delete id="dropId"  parameterType="Long" >
         delete from Post_table where id=#{id}
     </delete>
+    <update id="update" parameterType="Post">
+        update Post_table set postMobile=#{postMobile} where id=#{id}
+    </update>
 </mapper>
 
 

@@ -17,11 +17,14 @@
 <h1>로그인 성공</h1>
 <button class="btn btn-primary" onclick="location.href='/update-form'">수정</button>
 <button class="btn btn-danger" onclick="updateForm()">수정</button>
+${result1}
+${sessionScope.result2}
+${sessionScope.result3}
 </body>
 <script>
-    function  updateForm(){
-
-    }
+    // function  updateForm(){
+    //
+    // }
     const updateForm =()=>{
         location.href = "/update-form";
     }

@@ -41,4 +41,13 @@ public class PostService {
         }
         return false;
     }
+
+    public boolean update(PostDTO postDTO) {
+       int updateResult = postRepository.update(postDTO);
+       if(updateResult>0){
+           return true;
+       }else{
+           return false;
+       }
+    }
 }

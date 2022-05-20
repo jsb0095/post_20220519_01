@@ -35,4 +35,8 @@ public class PostRepository {
 
         return drop;
     }
+
+    public int update(PostDTO postDTO) {
+       return sql.update("Post.update",postDTO);
+    }
 }
